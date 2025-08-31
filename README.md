@@ -1,15 +1,9 @@
 # Deploy a Production Ready Kubernetes Cluster
 
-![Kubernetes Logo](https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/docs/img/kubernetes-logo.png)
-
-If you have questions, check the documentation at [kubespray.io](https://kubespray.io) and join us on the [kubernetes slack](https://kubernetes.slack.com), channel **\#kubespray**.
-You can get your invite [here](http://slack.k8s.io/)
-
-- Can be deployed on **[AWS](docs/cloud_providers/aws.md), GCE, [Azure](docs/cloud_providers/azure.md), [OpenStack](docs/cloud_controllers/openstack.md), [vSphere](docs/cloud_controllers/vsphere.md), [Equinix Metal](docs/cloud_providers/equinix-metal.md) (bare metal), Oracle Cloud Infrastructure (Experimental), or Baremetal**
+## This is the k8s version for 2SpeedLab
 - **Highly available** cluster
 - **Composable** (Choice of the network plugin for instance)
 - Supports most popular **Linux distributions**
-- **Continuous integration tests**
 
 ## Quick Start
 
@@ -26,35 +20,6 @@ docker run --rm -it --mount type=bind,source="$(pwd)"/inventory/sample,dst=/inve
 # Inside the container you may now run the kubespray playbooks:
 ansible-playbook -i /inventory/inventory.ini --private-key /root/.ssh/id_rsa cluster.yml
 ```
-
-### Ansible
-
-#### Usage
-
-See [Getting started](/docs/getting_started/getting-started.md)
-
-#### Collection
-
-See [here](docs/ansible/ansible_collection.md) if you wish to use this repository as an Ansible collection
-
-### Vagrant
-
-For Vagrant we need to install Python dependencies for provisioning tasks.
-Check that ``Python`` and ``pip`` are installed:
-
-```ShellSession
-python -V && pip -V
-```
-
-If this returns the version of the software, you're good to go. If not, download and install Python from here <https://www.python.org/downloads/source/>
-
-Install Ansible according to [Ansible installation guide](/docs/ansible/ansible.md#installing-ansible)
-then run the following step:
-
-```ShellSession
-vagrant up
-```
-
 ## Documents
 
 - [Requirements](#requirements)
@@ -205,24 +170,3 @@ See also [Network checker](docs/advanced/netcheck.md).
 - [nginx](https://kubernetes.github.io/ingress-nginx): the NGINX Ingress Controller.
 
 - [metallb](docs/ingress/metallb.md): the MetalLB bare-metal service LoadBalancer provider.
-
-## Community docs and resources
-
-- [kubernetes.io/docs/setup/production-environment/tools/kubespray/](https://kubernetes.io/docs/setup/production-environment/tools/kubespray/)
-- [kubespray, monitoring and logging](https://github.com/gregbkr/kubernetes-kargo-logging-monitoring) by @gregbkr
-- [Deploy Kubernetes w/ Ansible & Terraform](https://rsmitty.github.io/Terraform-Ansible-Kubernetes/) by @rsmitty
-- [Deploy a Kubernetes Cluster with Kubespray (video)](https://www.youtube.com/watch?v=CJ5G4GpqDy0)
-
-## Tools and projects on top of Kubespray
-
-- [Digital Rebar Provision](https://github.com/digitalrebar/provision/blob/v4/doc/integrations/ansible.rst)
-- [Terraform Contrib](https://github.com/kubernetes-sigs/kubespray/tree/master/contrib/terraform)
-- [Kubean](https://github.com/kubean-io/kubean)
-
-## CI Tests
-
-[![Build graphs](https://gitlab.com/kargo-ci/kubernetes-sigs-kubespray/badges/master/pipeline.svg)](https://gitlab.com/kargo-ci/kubernetes-sigs-kubespray/-/pipelines)
-
-CI/end-to-end tests sponsored by: [CNCF](https://cncf.io), [Equinix Metal](https://metal.equinix.com/), [OVHcloud](https://www.ovhcloud.com/), [ELASTX](https://elastx.se/).
-
-See the [test matrix](docs/developers/test_cases.md) for details.
