@@ -1,4 +1,3 @@
 ---
 dependencies:
   - role: container-engine/crictl
-  - role: container-engine/skopeo
