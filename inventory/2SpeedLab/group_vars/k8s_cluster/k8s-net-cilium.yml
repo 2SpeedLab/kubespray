@@ -25,7 +25,7 @@ cilium_l2announcements: false
 #   - --synchronize-k8s-nodes
 #   - --identity-allocation-mode=kvstore
 #   - Ref: https://docs.cilium.io/en/stable/internals/cilium_operator/#kvstore-operations
-# cilium_identity_allocation_mode: kvstore
+cilium_identity_allocation_mode: crd
 
 # Etcd SSL dirs
 # cilium_cert_dir: /etc/cilium/certs
@@ -107,11 +107,11 @@ cilium_ingress_load_balancer_mode: "dedicated"
 # cilium_native_routing_cidr_ipv6: ""
 
 # Enable transparent network encryption.
-# cilium_encryption_enabled: false
+cilium_encryption_enabled: true
 
 # Encryption method. Can be either ipsec or wireguard.
 # Only effective when `cilium_encryption_enabled` is set to true.
-# cilium_encryption_type: "ipsec"
+cilium_encryption_type: "wireguard"
 
 # Enable encryption for pure node to node traffic.
 # This option is only effective when `cilium_encryption_type` is set to `ipsec`.
@@ -153,20 +153,20 @@ cilium_ingress_load_balancer_mode: "dedicated"
 
 # Hubble
 ### Enable Hubble without install
-# cilium_enable_hubble: false
+cilium_enable_hubble: true
 ### Enable Hubble-ui
 ### Installed by default when hubble is enabled. To disable set to false
 # cilium_enable_hubble_ui: "{{ cilium_enable_hubble }}"
 ### Enable Hubble Metrics
 cilium_enable_hubble_metrics: true
 ### if cilium_enable_hubble_metrics: true
-# cilium_hubble_metrics: {}
-# - dns
-# - drop
-# - tcp
-# - flow
-# - icmp
-# - http
+cilium_hubble_metrics:
+ - dns
+ - drop
+ - tcp
+ - flow
+ - icmp
+ - http
 ### Enable Hubble install
 # cilium_hubble_install: false
 ### Enable auto generate certs if cilium_hubble_install: true
@@ -185,7 +185,7 @@ cilium_enable_hubble_metrics: true
 
 # IP address management mode for v1.9+.
 # https://docs.cilium.io/en/v1.9/concepts/networking/ipam/
-# cilium_ipam_mode: kubernetes
+cilium_ipam_mode: kubernetes
 
 # Extra arguments for the Cilium agent
 # cilium_agent_custom_args: []
