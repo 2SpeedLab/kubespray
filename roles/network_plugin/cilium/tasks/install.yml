@@ -24,9 +24,9 @@
     state: hard
     force: true
   loop:
-    - {s: "{{ kube_etcd_cacert_file }}", d: "ca_cert.crt"}
-    - {s: "{{ kube_etcd_cert_file }}", d: "cert.crt"}
-    - {s: "{{ kube_etcd_key_file }}", d: "key.pem"}
+    - { s: "{{ kube_etcd_cacert_file }}", d: "ca_cert.crt" }
+    - { s: "{{ kube_etcd_cert_file }}", d: "cert.crt" }
+    - { s: "{{ kube_etcd_key_file }}", d: "key.pem" }
   when:
     - cilium_identity_allocation_mode == "kvstore"
 

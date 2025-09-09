@@ -40,7 +40,7 @@
     dest: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     mode: "0644"
   with_items:
-    - {name: cilium, file: cilium-loadbalancer-ip-pool.yml, type: CiliumLoadBalancerIPPool}
+    - { name: cilium, file: cilium-loadbalancer-ip-pool.yml, type: CiliumLoadBalancerIPPool }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_lbippool_crd_ready is defined and cillium_lbippool_crd_ready.rc is defined and cillium_lbippool_crd_ready.rc == 0
@@ -54,7 +54,7 @@
     filename: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     state: "latest"
   loop:
-    - {name: cilium, file: cilium-loadbalancer-ip-pool.yml, type: CiliumLoadBalancerIPPool}
+    - { name: cilium, file: cilium-loadbalancer-ip-pool.yml, type: CiliumLoadBalancerIPPool }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_lbippool_crd_ready is defined and cillium_lbippool_crd_ready.rc is defined and cillium_lbippool_crd_ready.rc == 0
@@ -76,7 +76,7 @@
     dest: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     mode: "0644"
   with_items:
-    - {name: cilium, file: cilium-bgp-peering-policy.yml, type: CiliumBGPPeeringPolicy}
+    - { name: cilium, file: cilium-bgp-peering-policy.yml, type: CiliumBGPPeeringPolicy }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_bgpppolicy_crd_ready is defined and cillium_bgpppolicy_crd_ready.rc is defined and cillium_bgpppolicy_crd_ready.rc == 0
@@ -90,7 +90,7 @@
     filename: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     state: "latest"
   loop:
-    - {name: cilium, file: cilium-bgp-peering-policy.yml, type: CiliumBGPPeeringPolicy}
+    - { name: cilium, file: cilium-bgp-peering-policy.yml, type: CiliumBGPPeeringPolicy }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_bgpppolicy_crd_ready is defined and cillium_bgpppolicy_crd_ready.rc is defined and cillium_bgpppolicy_crd_ready.rc == 0
@@ -112,7 +112,7 @@
     dest: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     mode: "0644"
   with_items:
-    - {name: cilium, file: cilium-bgp-cluster-config.yml, type: CiliumBGPClusterConfig}
+    - { name: cilium, file: cilium-bgp-cluster-config.yml, type: CiliumBGPClusterConfig }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_bgpcconfig_crd_ready is defined and cillium_bgpcconfig_crd_ready.rc is defined and cillium_bgpcconfig_crd_ready.rc == 0
@@ -126,7 +126,7 @@
     filename: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     state: "latest"
   loop:
-    - {name: cilium, file: cilium-bgp-cluster-config.yml, type: CiliumBGPClusterConfig}
+    - { name: cilium, file: cilium-bgp-cluster-config.yml, type: CiliumBGPClusterConfig }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_bgpcconfig_crd_ready is defined and cillium_bgpcconfig_crd_ready.rc is defined and cillium_bgpcconfig_crd_ready.rc == 0
@@ -148,7 +148,7 @@
     dest: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     mode: "0644"
   with_items:
-    - {name: cilium, file: cilium-bgp-peer-config.yml, type: CiliumBGPPeerConfig}
+    - { name: cilium, file: cilium-bgp-peer-config.yml, type: CiliumBGPPeerConfig }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_bgppconfig_crd_ready is defined and cillium_bgppconfig_crd_ready.rc is defined and cillium_bgppconfig_crd_ready.rc == 0
@@ -162,7 +162,7 @@
     filename: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     state: "latest"
   loop:
-    - {name: cilium, file: cilium-bgp-peer-config.yml, type: CiliumBGPPeerConfig}
+    - { name: cilium, file: cilium-bgp-peer-config.yml, type: CiliumBGPPeerConfig }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_bgppconfig_crd_ready is defined and cillium_bgppconfig_crd_ready.rc is defined and cillium_bgppconfig_crd_ready.rc == 0
@@ -184,7 +184,7 @@
     dest: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     mode: "0644"
   with_items:
-    - {name: cilium, file: cilium-bgp-advertisement.yml, type: CiliumBGPAdvertisement}
+    - { name: cilium, file: cilium-bgp-advertisement.yml, type: CiliumBGPAdvertisement }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_bgpadvert_crd_ready is defined and cillium_bgpadvert_crd_ready.rc is defined and cillium_bgpadvert_crd_ready.rc == 0
@@ -198,7 +198,7 @@
     filename: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     state: "latest"
   loop:
-    - {name: cilium, file: cilium-bgp-advertisement.yml, type: CiliumBGPAdvertisement}
+    - { name: cilium, file: cilium-bgp-advertisement.yml, type: CiliumBGPAdvertisement }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cillium_bgpadvert_crd_ready is defined and cillium_bgpadvert_crd_ready.rc is defined and cillium_bgpadvert_crd_ready.rc == 0
@@ -220,7 +220,7 @@
     dest: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     mode: "0644"
   with_items:
-    - {name: cilium, file: cilium-bgp-node-config-override.yml, type: CiliumBGPNodeConfigOverride}
+    - { name: cilium, file: cilium-bgp-node-config-override.yml, type: CiliumBGPNodeConfigOverride }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cilium_bgp_node_config_crd_ready is defined and cilium_bgp_node_config_crd_ready.rc is defined and cilium_bgp_node_config_crd_ready.rc == 0
@@ -234,7 +234,7 @@
     filename: "{{ kube_config_dir }}/{{ item.name }}-{{ item.file }}"
     state: "latest"
   loop:
-    - {name: cilium, file: cilium-bgp-node-config-override.yml, type: CiliumBGPNodeConfigOverride}
+    - { name: cilium, file: cilium-bgp-node-config-override.yml, type: CiliumBGPNodeConfigOverride }
   when:
     - inventory_hostname == groups['kube_control_plane'][0]
     - cilium_bgp_node_config_crd_ready is defined and cilium_bgp_node_config_crd_ready.rc is defined and cilium_bgp_node_config_crd_ready.rc == 0

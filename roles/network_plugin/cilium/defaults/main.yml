@@ -50,7 +50,7 @@ cilium_tunnel_mode: vxlan
 cilium_loadbalancer_mode: snat
 
 # -- Configure Loadbalancer IP Pools
-cilium_loadbalancer_ip_pools: []
+cilium_loadbalancer_ip_pools: [ ]
 
 # Optional features
 cilium_enable_prometheus: false
@@ -153,7 +153,7 @@ cilium_enable_hubble_ui: "{{ cilium_enable_hubble }}"
 ### Enable Hubble Metrics (deprecated)
 cilium_enable_hubble_metrics: false
 ### if cilium_enable_hubble_metrics: true
-cilium_hubble_metrics: []
+cilium_hubble_metrics: [ ]
 # - dns
 # - drop
 # - tcp
@@ -171,9 +171,9 @@ cilium_hubble_export_file_max_size_mb: "10"
 cilium_hubble_export_dynamic_enabled: false
 cilium_hubble_export_dynamic_config_content:
   - name: all
-    fieldMask: []
-    includeFilters: []
-    excludeFilters: []
+    fieldMask: [ ]
+    includeFilters: [ ]
+    excludeFilters: [ ]
     filePath: "/var/run/cilium/hubble/events.log"
 
 # Override the DNS suffix that Hubble-Relay uses to resolve its peer service.
@@ -212,14 +212,14 @@ cilium_ipam_mode: cluster-pool
 
 
 # Extra arguments for the Cilium agent
-cilium_agent_custom_args: [] # deprecated
-cilium_agent_extra_args: []
+cilium_agent_custom_args: [ ] # deprecated
+cilium_agent_extra_args: [ ]
 
 # For adding and mounting extra volumes to the cilium agent
-cilium_agent_extra_volumes: []
-cilium_agent_extra_volume_mounts: []
+cilium_agent_extra_volumes: [ ]
+cilium_agent_extra_volume_mounts: [ ]
 
-cilium_agent_extra_env_vars: []
+cilium_agent_extra_env_vars: [ ]
 
 cilium_operator_replicas: 2
 
@@ -230,15 +230,15 @@ cilium_operator_api_serve_addr: "127.0.0.1:9234"
 ##  cilium_config_extra_vars:
 ##    var1: "value1"
 ##    var2: "value2"
-cilium_config_extra_vars: {}
+cilium_config_extra_vars: { }
 
 # For adding and mounting extra volumes to the cilium operator
-cilium_operator_extra_volumes: []
-cilium_operator_extra_volume_mounts: []
+cilium_operator_extra_volumes: [ ]
+cilium_operator_extra_volume_mounts: [ ]
 
 # Extra arguments for the Cilium Operator
-cilium_operator_custom_args: [] # deprecated
-cilium_operator_extra_args: []
+cilium_operator_custom_args: [ ] # deprecated
+cilium_operator_extra_args: [ ]
 
 # Tolerations of the cilium operator
 cilium_operator_tolerations:
@@ -314,19 +314,19 @@ cilium_enable_bgp_control_plane: false
 
 
 # -- Configure BGP Instances (New bgpv2 API v1.16+)
-cilium_bgp_cluster_configs: []
+cilium_bgp_cluster_configs: [ ]
 
 # -- Configure BGP Peers (New bgpv2 API v1.16+)
-cilium_bgp_peer_configs: []
+cilium_bgp_peer_configs: [ ]
 
 # -- Configure BGP Advertisements (New bgpv2 API v1.16+)
-cilium_bgp_advertisements: []
+cilium_bgp_advertisements: [ ]
 
 # -- Configure BGP Node Config Overrides (New bgpv2 API v1.16+)
-cilium_bgp_node_config_overrides: []
+cilium_bgp_node_config_overrides: [ ]
 
 # -- Configure BGP Peers (Legacy < v1.16)
-cilium_bgp_peering_policies: []
+cilium_bgp_peering_policies: [ ]
 
 # -- Whether to enable CNP status updates.
 cilium_disable_cnp_status_updates: true
@@ -365,4 +365,4 @@ cilium_install_extra_flags: ""
 
 # Cilium extra values, use any values from cilium Helm Chart
 # ref: https://docs.cilium.io/en/stable/helm-reference/
-cilium_extra_values: {}
+cilium_extra_values: { }
