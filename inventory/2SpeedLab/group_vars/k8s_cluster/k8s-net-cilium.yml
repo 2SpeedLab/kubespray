@@ -34,13 +34,13 @@ cilium_identity_allocation_mode: crd
 # kube_etcd_key_file: cert-key.pem
 
 # Limits for apps
-# cilium_memory_limit: 500M
-# cilium_cpu_limit: 500m
-# cilium_memory_requests: 64M
-# cilium_cpu_requests: 100m
+cilium_memory_limit: 500M
+cilium_cpu_limit: 500m
+cilium_memory_requests: 64M
+cilium_cpu_requests: 100m
 
 # Overlay Network Mode
-# cilium_tunnel_mode: vxlan
+cilium_tunnel_mode: vxlan
 
 # LoadBalancer Mode (snat/dsr/hybrid) Ref: https://docs.cilium.io/en/stable/network/kubernetes/kubeproxy-free/#dsr-mode
 # cilium_loadbalancer_mode: snat
@@ -57,7 +57,7 @@ cilium_identity_allocation_mode: crd
 # Only effective when monitor aggregation is set to "medium" or higher.
 # cilium_monitor_aggregation_flags: "all"
 # Kube Proxy Replacement mode (strict/partial)
-# cilium_kube_proxy_replacement: partial
+cilium_kube_proxy_replacement: strict
 
 # If upgrading from Cilium < 1.5, you may want to override some of these options
 # to prevent service disruptions. See also:
@@ -241,7 +241,7 @@ cilium_ipam_mode: kubernetes
 
 # -- Enables masquerading of IPv4 traffic leaving the node from endpoints.
 # Available for Cilium v1.10 and up
-# cilium_enable_ipv4_masquerade: true
+cilium_enable_ipv4_masquerade: true
 # -- Enables masquerading of IPv6 traffic leaving the node from endpoints.
 # Available for Cilium v1.10 and up
 # cilium_enable_ipv6_masquerade: true

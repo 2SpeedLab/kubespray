@@ -213,7 +213,10 @@ cilium_ipam_mode: cluster-pool
 
 # Extra arguments for the Cilium agent
 cilium_agent_custom_args: [ ] # deprecated
-cilium_agent_extra_args: [ ]
+cilium_agent_extra_args:
+  - --agent-health-port=9879
+  - --disable-envoy-version-check
+  - --hostbin-path=/usr/local/bin  # Alternative path
 
 # For adding and mounting extra volumes to the cilium agent
 cilium_agent_extra_volumes: [ ]
@@ -272,8 +275,8 @@ cilium_cni_log_file: "/var/run/cilium/cilium-cni.log"
 # Available for Cilium v1.11 and up
 cilium_cgroup_auto_mount: true
 # -- Configure cgroup root where cgroup2 filesystem is mounted on the host
-cilium_cgroup_host_root: "/run/cilium/cgroupv2"
-
+# cilium_cgroup_host_root: "/run/cilium/cgroupv2"
+cilium_cgroup_host_root: /sys/fs/cgroup
 # Specifies the ratio (0.0-1.0) of total system memory to use for dynamic
 # sizing of the TCP CT, non-TCP CT, NAT and policy BPF maps.
 cilium_bpf_map_dynamic_size_ratio: "0.0025"
