@@ -23,7 +23,7 @@ local_release_dir: "/tmp/releases"
 retry_stagger: 5
 
 # This is the user that owns tha cluster installation.
-kube_owner: kube
+kube_owner: root
 
 # This is the group that the cert creation scripts chgrp the
 # cert files to. Not really changeable...
@@ -166,7 +166,7 @@ dns_mode: coredns
 # Enable nodelocal dns cache
 enable_nodelocaldns: true
 enable_nodelocaldns_secondary: false
-nodelocaldns_ip: 169.254.25.10
+#nodelocaldns_ip: 169.254.25.10
 nodelocaldns_health_port: 9254
 nodelocaldns_second_health_port: 9256
 nodelocaldns_bind_metrics_host_ip: false

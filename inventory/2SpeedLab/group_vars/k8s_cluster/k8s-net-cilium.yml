@@ -10,7 +10,7 @@
 cilium_l2announcements: false
 
 # Cilium agent health port
-# cilium_agent_health_port: "9879"
+cilium_agent_health_port: "9879"
 
 # Identity allocation mode selects how identities are shared between cilium
 # nodes by setting how they are stored. The options are "crd" or "kvstore".
@@ -34,13 +34,13 @@ cilium_identity_allocation_mode: crd
 # kube_etcd_key_file: cert-key.pem
 
 # Limits for apps
-# cilium_memory_limit: 500M
-# cilium_cpu_limit: 500m
-# cilium_memory_requests: 64M
-# cilium_cpu_requests: 100m
+cilium_memory_limit: 500M
+cilium_cpu_limit: 500m
+cilium_memory_requests: 64M
+cilium_cpu_requests: 100m
 
 # Overlay Network Mode
-# cilium_tunnel_mode: vxlan
+cilium_tunnel_mode: vxlan
 
 cilium_ingress_enabled: true
 cilium_ingress_default: true
@@ -61,7 +61,7 @@ cilium_ingress_load_balancer_mode: "dedicated"
 # Only effective when monitor aggregation is set to "medium" or higher.
 # cilium_monitor_aggregation_flags: "all"
 # Kube Proxy Replacement mode (strict/partial)
-# cilium_kube_proxy_replacement: partial
+cilium_kube_proxy_replacement: true
 
 # If upgrading from Cilium < 1.5, you may want to override some of these options
 # to prevent service disruptions. See also:
@@ -107,11 +107,11 @@ cilium_ingress_load_balancer_mode: "dedicated"
 # cilium_native_routing_cidr_ipv6: ""
 
 # Enable transparent network encryption.
-cilium_encryption_enabled: true
+cilium_encryption_enabled: false
 
 # Encryption method. Can be either ipsec or wireguard.
 # Only effective when `cilium_encryption_enabled` is set to true.
-cilium_encryption_type: "wireguard"
+#cilium_encryption_type: "wireguard"
 
 # Enable encryption for pure node to node traffic.
 # This option is only effective when `cilium_encryption_type` is set to `ipsec`.
@@ -153,7 +153,7 @@ cilium_encryption_type: "wireguard"
 
 # Hubble
 ### Enable Hubble without install
-cilium_enable_hubble: true
+cilium_enable_hubble: false
 ### Enable Hubble-ui
 ### Installed by default when hubble is enabled. To disable set to false
 # cilium_enable_hubble_ui: "{{ cilium_enable_hubble }}"
@@ -188,7 +188,8 @@ cilium_hubble_metrics:
 cilium_ipam_mode: kubernetes
 
 # Extra arguments for the Cilium agent
-# cilium_agent_custom_args: []
+cilium_agent_custom_args:
+  - --write-cni-conf-when-ready=/host/etc/cni/net.d/05-cilium.conflist
 
 # For adding and mounting extra volumes to the cilium agent
 # cilium_agent_extra_volumes: []
@@ -245,7 +246,7 @@ cilium_ipam_mode: kubernetes
 
 # -- Enables masquerading of IPv4 traffic leaving the node from endpoints.
 # Available for Cilium v1.10 and up
-# cilium_enable_ipv4_masquerade: true
+cilium_enable_ipv4_masquerade: true
 # -- Enables masquerading of IPv6 traffic leaving the node from endpoints.
 # Available for Cilium v1.10 and up
 # cilium_enable_ipv6_masquerade: true
