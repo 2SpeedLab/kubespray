@@ -153,7 +153,7 @@ cilium_encryption_enabled: false
 
 # Hubble
 ### Enable Hubble without install
-cilium_enable_hubble: true
+cilium_enable_hubble: false
 ### Enable Hubble-ui
 ### Installed by default when hubble is enabled. To disable set to false
 # cilium_enable_hubble_ui: "{{ cilium_enable_hubble }}"
