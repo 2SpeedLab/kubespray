@@ -194,7 +194,7 @@ kube_cert_compat_dir: "/etc/kubernetes/pki"
 kube_token_dir: "{{ kube_config_dir }}/tokens"
 
 # This is the user that owns the cluster installation.
-kube_owner: kube
+kube_owner: root
 
 # This is the group that the cert creation scripts chgrp the
 # cert files to. Not really changeable...

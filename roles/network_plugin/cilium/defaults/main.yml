@@ -59,7 +59,7 @@ cilium_enable_portmap: false
 # Monitor aggregation level (none/low/medium/maximum)
 cilium_monitor_aggregation: medium
 # Kube Proxy Replacement mode (true/false)
-cilium_kube_proxy_replacement: false
+cilium_kube_proxy_replacement: true
 
 # If not defined `cilium_dns_proxy_enable_transparent_mode`, it will following the Cilium behavior.
 # When Cilium is configured to replace kube-proxy, it automatically enables dnsProxy, which will conflict with nodelocaldns.
@@ -289,7 +289,7 @@ cilium_enable_ipv4_masquerade: true
 cilium_enable_ipv6_masquerade: true
 
 # -- Enable native IP masquerade support in eBPF
-cilium_enable_bpf_masquerade: false
+cilium_enable_bpf_masquerade: true
 
 # -- Configure whether direct routing mode should route traffic via
 # host stack (true) or directly and more efficiently out of BPF (false) if
