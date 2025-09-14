@@ -34,8 +34,8 @@ cilium_identity_allocation_mode: crd
 # kube_etcd_key_file: cert-key.pem
 
 # Limits for apps
-cilium_memory_limit: 500M
-cilium_cpu_limit: 500m
+cilium_memory_limit: 1000M
+cilium_cpu_limit: 1000m
 cilium_memory_requests: 64M
 cilium_cpu_requests: 100m
 
@@ -196,7 +196,7 @@ cilium_agent_custom_args:
 # cilium_operator_replicas: 2
 
 # The address at which the cillium operator bind health check api
-# cilium_operator_api_serve_addr: "127.0.0.1:9234"
+cilium_operator_api_serve_addr: "0.0.0.0:9234"
 
 ## A dictionary of extra config variables to add to cilium-config, formatted like:
 ##  cilium_config_extra_vars:
