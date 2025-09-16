@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "name": "{{ container_runtime }}1",
+    "name": "kata1",
     "namespace": "default",
     "attempt": 1,
     "uid": "hdishd83djaidwnduwk28bcsb"

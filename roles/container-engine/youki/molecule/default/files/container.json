@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "name": "{{ container_runtime }}1"
+    "name": "youki1"
   },
   "image": {
     "image": "quay.io/kubespray/hello-world:latest"
   },
-  "log_path": "{{ container_runtime }}1.0.log",
+  "log_path": "youki1.0.log",
   "linux": {}
 }
