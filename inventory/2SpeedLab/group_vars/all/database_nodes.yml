@@ -1,8 +1,0 @@
-# Taints for database nodes
-node_taints:
-  - "database=true:NoSchedule"
-
-# Optional: Add node labels
-node_labels:
-  node-type: database
-  workload: database
