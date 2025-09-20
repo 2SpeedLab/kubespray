@@ -28,6 +28,7 @@ plugins/mitogen
 !inventory/local
 !inventory/sample
 inventory/*/artifacts/
+!inventory/2SpeedLab/inventory.ini
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
