@@ -42,6 +42,10 @@ cilium_cpu_requests: 100m
 # Overlay Network Mode
 cilium_tunnel_mode: vxlan
 
+cilium_ingress_enabled: true
+cilium_ingress_default: true
+cilium_ingress_load_balancer_mode: "dedicated"
+
 # LoadBalancer Mode (snat/dsr/hybrid) Ref: https://docs.cilium.io/en/stable/network/kubernetes/kubeproxy-free/#dsr-mode
 # cilium_loadbalancer_mode: snat
 
