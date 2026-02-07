@@ -21,6 +21,7 @@ loadbalancer_apiserver:
 
 ## Internal loadbalancers for apiservers
 # loadbalancer_apiserver_localhost: true
+loadbalancer_apiserver_localhost: false
 # valid options are "nginx" or "haproxy"
 # loadbalancer_apiserver_type: nginx  # valid values "nginx" or "haproxy"
 
