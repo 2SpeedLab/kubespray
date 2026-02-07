@@ -15,6 +15,9 @@ bin_dir: /usr/local/bin
 # loadbalancer_apiserver:
 #   address: 1.2.3.4
 #   port: 1234
+loadbalancer_apiserver:
+  address: 10.10.88.21
+  port: 6443
 
 ## Internal loadbalancers for apiservers
 # loadbalancer_apiserver_localhost: true
