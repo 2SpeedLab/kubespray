@@ -1,18 +1,18 @@
 ---
 # Please see roles/container-engine/containerd/defaults/main.yml for more configuration options
 
-# containerd_storage_dir: "/var/lib/containerd"
-# containerd_state_dir: "/run/containerd"
-# containerd_oom_score: 0
+containerd_storage_dir: "/var/lib/containerd"
+containerd_state_dir: "/run/containerd"
+containerd_oom_score: 0
 
 # containerd_default_runtime: "runc"
 # containerd_snapshotter: "native"
 
-# containerd_runc_runtime:
-#   name: runc
-#   type: "io.containerd.runc.v2"
-#   engine: ""
-#   root: ""
+#containerd_runc_runtime:
+#  name: runc
+#  type: "io.containerd.runc.v2"
+#  engine: ""
+##   root: ""
 
 # containerd_additional_runtimes:
 # Example for Kata Containers as additional runtime:
@@ -21,8 +21,8 @@
 #     engine: ""
 #     root: ""
 
-# containerd_grpc_max_recv_message_size: 16777216
-# containerd_grpc_max_send_message_size: 16777216
+containerd_grpc_max_recv_message_size: 16777216
+containerd_grpc_max_send_message_size: 16777216
 
 # Containerd debug socket location: unix or tcp format
 # containerd_debug_address: ""
@@ -53,7 +53,7 @@
 #       header:
 #         Authorization: "Basic XXX"
 
-# containerd_max_container_log_line_size: 16384
+containerd_max_container_log_line_size: 16384
 
 # containerd_registry_auth:
 #   - registry: 10.0.0.2:5000

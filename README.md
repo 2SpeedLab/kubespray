@@ -34,3 +34,7 @@ ansible-playbook -i /inventory/inventory.ini --private-key /root/.ssh/id_rsa clu
 - [local-volume-provisioner](https://github.com/kubernetes-sigs/sig-storage-local-static-provisioner) 2.5.0
 - [node-feature-discovery](https://github.com/kubernetes-sigs/node-feature-discovery) 0.16.4
 - kube-vip 0.8.0
+
+```ShellSesson
+ansible-playbook -i ./inventory/2SpeedLab/inventory.ini ./cluster.yml
+```
