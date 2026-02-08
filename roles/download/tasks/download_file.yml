@@ -16,9 +16,6 @@
   - name: Download_file | Set pathname of cached file
     set_fact:
       file_path_cached: "{{ download_cache_dir }}/{{ download.dest | basename }}"
-      when:
-      - download is defined
-      - download.dest is defined
     tags:
     - facts
 

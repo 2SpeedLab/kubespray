@@ -217,7 +217,7 @@ dns_domain: "{{ cluster_name }}"
 ## Container runtime
 ## docker for docker, crio for cri-o and containerd for containerd.
 ## Default: containerd
-container_manager: containerd
+container_manager: crio
 
 # Additional container runtimes
 kata_containers_enabled: false
@@ -284,8 +284,8 @@ default_kubelet_config_dir: "{{ kube_config_dir }}/dynamic_kubelet_dir"
 
 ## Supplementary addresses that can be added in kubernetes ssl keys.
 ## That can be useful for example to setup a keepalived virtual IP
-supplementary_addresses_in_ssl_keys: [10.10.25.26, 10.10.25.69, 10.10.24.202, 10.10.25.58, 10.10.88.21, 10.10.25.18, 10.10.24.239, rancher1.tabbycatlab.dev]
-
+# supplementary_addresses_in_ssl_keys: [10.10.25.26, 10.10.25.69, 10.10.24.202, 10.10.25.58, 10.10.24.137, 10.10.25.18, 10.10.24.239, rancher1.tabbycatlab.dev]
+supplementary_addresses_in_ssl_keys: [10.10.24.137, rancher.tabbycatlab.dev]
 ## Running on top of openstack vms with cinder enabled may lead to unschedulable pods due to NoVolumeZoneConflict restriction in kube-scheduler.
 ## See https://github.com/kubernetes-sigs/kubespray/issues/2141
 ## Set this variable to true to get rid of this issue

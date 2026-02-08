@@ -16,12 +16,11 @@ bin_dir: /usr/local/bin
 #   address: 1.2.3.4
 #   port: 1234
 loadbalancer_apiserver:
-  address: 10.10.88.21
+  address: 10.10.24.137
   port: 6443
 
 ## Internal loadbalancers for apiservers
 # loadbalancer_apiserver_localhost: true
-loadbalancer_apiserver_localhost: false
 # valid options are "nginx" or "haproxy"
 # loadbalancer_apiserver_type: nginx  # valid values "nginx" or "haproxy"
 
